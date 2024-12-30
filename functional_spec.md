@@ -10,7 +10,6 @@ As a user, I want to add, remove, mark tasks as done and list tasks, so that I c
 The app is loosely inspired by the Bullet Journal method. Daily tasks are listed simply on a piece of paper as a task, a thought or an event. 
 This app will only handle tasks and whether that task is done or not.
 ## App Commands
-To start the app, run `todo`
 each task will be numbered in order of when it was added. 
 * add - add a task
 * remove {number of task} - remove a task
