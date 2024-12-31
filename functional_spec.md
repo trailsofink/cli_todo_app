@@ -12,8 +12,8 @@ This app will only handle tasks and whether that task is done or not.
 ## App Commands
 each task will be numbered in order of when it was added. 
 * add - add a task
-* remove {number of task} - remove a task
-* done {number of task} - mark a task as done
+* remove - remove a task
+* done - mark a task as done
 * list - list tasks
 * help - show this help message
 
