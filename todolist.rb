@@ -54,33 +54,37 @@ end
 
 # Start of the program.
 
-task_list = TaskList.new
-help_message
+if __FILE__ == $PROGRAM_NAME
+  task_list = TaskList.new
+  help_message
 
-loop do
-  user_input = gets.chomp
-  case user_input
-  when 'add'
-    new_task = TaskList::Task.new
-    new_task.add(task_list.tasks)
-    puts 'what is the task?'
-    input_description = gets.chomp
-    new_task.description = input_description
-  when 'remove'
-    puts 'Which task do you want to remove?'
+  loop do
     user_input = gets.chomp
-    remove_task_int = user_input.to_i
-    task_list.remove(remove_task_int)
-  when 'list'
-    task_list.tasks.each do |task|
-      puts "#{task.number}. [#{task.status}] #{task.description}"
+    case user_input
+    when 'add'
+      new_task = TaskList::Task.new
+      new_task.add(task_list.tasks)
+      puts 'what is the task?'
+      input_description = gets.chomp
+      new_task.description = input_description
+    when 'remove'
+      puts 'Which task do you want to remove?'
+      user_input = gets.chomp
+      remove_task_int = user_input.to_i
+      task_list.remove(remove_task_int)
+    when 'list'
+      task_list.tasks.each do |task|
+        puts "#{task.number}. [#{task.status}] #{task.description}"
+      end
+    when 'done'
+      puts 'Which task is complete?'
+      user_input = gets.chomp
+      task_status_int = user_input.to_i
+      task_list.done(task_status_int)
+    when 'help'
+      help_message
+    else
+      puts "Unknown command. Try 'add', or 'help'."
     end
-  when 'done'
-    puts 'Which task is complete?'
-    user_input = gets.chomp
-    task_status_int = user_input.to_i
-    task_list.done(task_status_int)
-  else
-    puts "Unknown command. Try 'add', or 'help'."
   end
 end
