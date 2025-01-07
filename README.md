@@ -1,5 +1,6 @@
 # ruby-cli-template
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+To run the cli program, from the root dir run `ruby todolist.rb`
+
 
 - Ruby version: `3.2.1`
